@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Prison = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class Prison {
+import chooseRandomlyFrom from '../lib/random.js';
+export class Prison {
     constructor(name, type = null, convicts = null, guards = null, help = null) {
         this.name = name;
         this.type = (type === null) ? this.generateType() : type;
@@ -25,7 +19,7 @@ class Prison {
             "This place is more akin to a religious community than a true prison. Prisoners are enrolled as initiates and are required to go through certain rituals to be released.",
             "The prison is a labor camp, perhaps prisoners are forced to work at various crafts, farm or they're simply on a chain gang.",
         ];
-        return random_js_1.default(types);
+        return chooseRandomlyFrom(types);
     }
     generateConvicts() {
         const standard = 'This is a place for hardened criminals - thieves, murderers, rapists and robbers. The folk here are likely violent and skilled in the ways of criminality';
@@ -39,7 +33,7 @@ class Prison {
             "This place was built to house a special kind of inmate, Magic-users. It has additional layers of security, of course.",
             "They're ghosts. This place was meant to shackle the souls of condemned beyond the grave as a form of additional punishment.",
         ];
-        return random_js_1.default(convicts);
+        return chooseRandomlyFrom(convicts);
     }
     generateGuards() {
         const guards = [
@@ -52,7 +46,7 @@ class Prison {
             `There are only a few guards, but they are preternatural in some way, ranging from Cerberoi and Minotaur to Spirits or Elementals.`,
             `There aren't any. Some sort of eldritch force keeps people here, from a curse to even a form of spell.`,
         ];
-        return random_js_1.default(guards);
+        return chooseRandomlyFrom(guards);
     }
     generateHelp() {
         const helps = [
@@ -65,8 +59,8 @@ class Prison {
             "A kingpin, able to organize other prisoners (at least some of them) and to bend them towards their own ends.",
             "A seer, priest or other form of magic-user who is able to communicate with the outside, or if given the materials and seclusion, cast spells.",
         ];
-        return random_js_1.default(helps);
+        return chooseRandomlyFrom(helps);
     }
 }
-exports.Prison = Prison;
-exports.default = Prison;
+export default Prison;
+//# sourceMappingURL=Prison.js.map

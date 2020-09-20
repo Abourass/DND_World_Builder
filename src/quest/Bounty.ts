@@ -1,4 +1,4 @@
-import chooseRandomlyFrom from '../random.js';
+import chooseRandomlyFrom from '../lib/random.js';
 
 export class Bounty {
   public name: string;

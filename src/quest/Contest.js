@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Contest = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class Contest {
+import chooseRandomlyFrom from '../lib/random.js';
+export class Contest {
     constructor(name, type = null, regarded = null, stakes = null, unique = null) {
         this.name = name;
         this.type = (type === null) ? this.generateType() : type;
@@ -31,7 +25,7 @@ class Contest {
             }
             return `${types[firstType]} as well as ${types[secondType]}`;
         }
-        return random_js_1.default(types);
+        return chooseRandomlyFrom(types);
     }
     generateRegard() {
         const regards = [
@@ -44,7 +38,7 @@ class Contest {
             "The diversion used to be quite popular, but now is more associated with the old or the unfashionable.",
             "This game is nearly or entirely extinct."
         ];
-        return random_js_1.default(regards);
+        return chooseRandomlyFrom(regards);
     }
     generateStakes() {
         const none = 'Non-existent. It is exclusively played for fun or honor.';
@@ -53,7 +47,7 @@ class Contest {
         const large = 'This game is not played for money, but rather possessions, favors or tidbits of information.';
         const staggering = 'Staggering. Only the very wealthiest individuals, or entire groups of poorer ones, can endure the cost of a loss.';
         const stakeRatios = [none, small, small, small, moderate, moderate, large, large, staggering];
-        return random_js_1.default(stakeRatios);
+        return chooseRandomlyFrom(stakeRatios);
     }
     generateUnique() {
         const uniqueTraits = [
@@ -66,8 +60,8 @@ class Contest {
             "The game is associated with a certain important life event, such as marriage, funerals or some other milestone. While not exclusively played there, the connection may raise eyebrows.",
             "It's just a normal game."
         ];
-        return random_js_1.default(uniqueTraits);
+        return chooseRandomlyFrom(uniqueTraits);
     }
 }
-exports.Contest = Contest;
-exports.default = Contest;
+export default Contest;
+//# sourceMappingURL=Contest.js.map

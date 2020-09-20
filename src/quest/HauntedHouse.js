@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.HauntedHouse = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class HauntedHouse {
+import chooseRandomlyFrom from '../lib/random.js';
+export class HauntedHouse {
     constructor(location = null, causedBy = null, ghostDemeanor = null, ghostDesire = null) {
         this.location = (location === null) ? this.generateLocation() : location;
         this.causedBy = (causedBy === null) ? this.generateCause() : causedBy;
@@ -24,8 +18,8 @@ class HauntedHouse {
             "The entirety of a small settlement, or for larger communities, a district of the city.",
         ];
         return (Math.floor(Math.random() * 9) !== 8)
-            ? random_js_1.default(locations)
-            : `${random_js_1.default(locations)}, additionally the location is now abandoned`;
+            ? chooseRandomlyFrom(locations)
+            : `${chooseRandomlyFrom(locations)}, additionally the location is now abandoned`;
     }
     generateCause() {
         const violence = 'A violent and senseless murder, perhaps even more than one.';
@@ -40,7 +34,7 @@ class HauntedHouse {
             'Some powerful Aberration, Dragon or another eldritch being died here. They never really left.',
             'A semi-divine being, such as an Outsider or a powerful Warlock or Cleric, died here. Their soul still lurks in the area, aspecting it towards their alignment.'
         ];
-        return random_js_1.default(causes);
+        return chooseRandomlyFrom(causes);
     }
     generateGhostDemeanor() {
         const ghostDemeanors = [
@@ -53,7 +47,7 @@ class HauntedHouse {
             "Distant from this world, these shades can see past what mortals can. They can share their insights into the future with those that sleep within their haunt, whether the victim wishes it or not.",
             "Memories and recollections are toys for these ghosts, able to replay spans of time from their subject's minds, or to cloud their thoughts and make them forget what has transpired here.",
         ];
-        return random_js_1.default(ghostDemeanors);
+        return chooseRandomlyFrom(ghostDemeanors);
     }
     generateGhostDesire() {
         const escape = 'Freedom! Escape! To roam the world as they will as a disembodied spirit.';
@@ -68,8 +62,8 @@ class HauntedHouse {
             "To endlessly repeat the circumstances leading up to their deaths.",
             "Slaking the various vices that they held to in life, in spite of whether or not that's still possible.",
         ];
-        return random_js_1.default(desires);
+        return chooseRandomlyFrom(desires);
     }
 }
-exports.HauntedHouse = HauntedHouse;
-exports.default = HauntedHouse;
+export default HauntedHouse;
+//# sourceMappingURL=HauntedHouse.js.map

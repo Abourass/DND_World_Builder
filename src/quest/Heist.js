@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Heist = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class Heist {
+import chooseRandomlyFrom from '../lib/random.js';
+export class Heist {
     constructor(loot = null, where = null, security = null, twist = null) {
         this.loot = (loot === null) ? this.generateLoot() : loot;
         this.where = (where === null) ? this.generateWhere() : where;
@@ -24,7 +18,7 @@ class Heist {
             "Something seemingly impossible to steal, such as someone's honor, a monument or a concept.",
             "The initial job was a ruse to distract from the true heist! Roll twice on this table, the first result is the ruse, the second is the true target",
         ];
-        return random_js_1.default(lootChoices);
+        return chooseRandomlyFrom(lootChoices);
     }
     generateWhere() {
         const locations = [
@@ -37,7 +31,7 @@ class Heist {
             "Tomb, crypt or dungeon.",
             "A hoard for some great beast or eldritch being.",
         ];
-        return random_js_1.default(locations);
+        return chooseRandomlyFrom(locations);
     }
     generateSecurity() {
         const guards = [
@@ -72,7 +66,7 @@ class Heist {
             }
             return `${guards[firstTwist]} and ${guards[secondTwist]} as well as ${guards[thirdTwist]}`;
         }
-        return random_js_1.default(guards);
+        return chooseRandomlyFrom(guards);
     }
     generateTwist() {
         const twists = [
@@ -109,8 +103,8 @@ class Heist {
             }
             return `${twists[firstTwist]} and ${twists[secondTwist]} as well as ${twists[thirdTwist]}`;
         }
-        return random_js_1.default(twists);
+        return chooseRandomlyFrom(twists);
     }
 }
-exports.Heist = Heist;
-exports.default = Heist;
+export default Heist;
+//# sourceMappingURL=Heist.js.map

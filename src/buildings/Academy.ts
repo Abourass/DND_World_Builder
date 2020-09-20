@@ -1,4 +1,4 @@
-import chooseRandomlyFrom from '../random.js';
+import chooseRandomlyFrom from '../lib/random.js';
 
 export class Academy {
   public name: string;

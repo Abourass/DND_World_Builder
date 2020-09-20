@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Academy = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class Academy {
+import chooseRandomlyFrom from '../lib/random.js';
+export class Academy {
     constructor(name, type = null, studentBody = null, reputation = null, unique = null) {
         this.name = name;
         this.type = (type === null) ? this.generateType() : type;
@@ -24,7 +18,7 @@ class Academy {
             'Natural philosophy, mathematics and medicine.',
             'The art of government work, whether that be as a scholar, administrator or clerk.'
         ];
-        return random_js_1.default(schoolTypes);
+        return chooseRandomlyFrom(schoolTypes);
     }
     generateStudentBody() {
         const cash = 'Any who can post the cost, whether that be in kind or in cash.';
@@ -36,7 +30,7 @@ class Academy {
             'Only those with a unique skill set or reputation can study here. An audition of some stripe will be necessary.',
             'Those serving the ruling regime are taught here; one can only study here with the permission of the government.',
         ];
-        return random_js_1.default(studentTypes);
+        return chooseRandomlyFrom(studentTypes);
     }
     generateReputation() {
         const positive = 'Very positive; this is a place known far and wide for it\'s ability to cultivate students.';
@@ -47,7 +41,7 @@ class Academy {
             'Largely negative. The school could be known for turning out poor students, or even criminals.',
             'Obscure and largely unknown outside of it\'s home region, this place of instruction has yet to make a name for itself.',
         ];
-        return random_js_1.default(reputations);
+        return chooseRandomlyFrom(reputations);
     }
     generateUniqueness() {
         const uniqueTraits = [
@@ -60,8 +54,8 @@ class Academy {
             'A member of the faculty is some strange creature, such as a Golem, Dragon or even an Aberration.',
             'The knowledge offered by this school is far in advance of anything else in the surrounding region. Graduates here seem almost wondrous in what their learning equips them to do.'
         ];
-        return random_js_1.default(uniqueTraits);
+        return chooseRandomlyFrom(uniqueTraits);
     }
 }
-exports.Academy = Academy;
-exports.default = Academy;
+export default Academy;
+//# sourceMappingURL=Academy.js.map

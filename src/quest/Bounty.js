@@ -1,11 +1,5 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.Bounty = void 0;
-const random_js_1 = __importDefault(require("../random.js"));
-class Bounty {
+import chooseRandomlyFrom from '../lib/random.js';
+export class Bounty {
     constructor(name, worth = null, crime = null, whereabouts = null, unique = null) {
         this.name = name;
         this.worth = (worth === null) ? this.generateWorth() : worth;
@@ -20,7 +14,7 @@ class Bounty {
         const largeWorth = 'A huge score. While not enough to retire, it would be a massive boon. There will be quite a lot of competitors, perhaps five or six.';
         const hugeWorth = 'A king\'s ransom, probably financed by an organization, rather than an individual. A dozen or more rivals will undoubtedly be after it as well.';
         const worthRatio = [lowWorth, modestWorth, modestWorth, modestWorth, moderateWorth, moderateWorth, moderateWorth, largeWorth, hugeWorth];
-        return random_js_1.default(worthRatio);
+        return chooseRandomlyFrom(worthRatio);
     }
     generateCrime() {
         const crimes = [
@@ -40,7 +34,7 @@ class Bounty {
             }
             return `${crimes[firstCrime]} and ${crimes[secondCrime]}`;
         }
-        return random_js_1.default(crimes);
+        return chooseRandomlyFrom(crimes);
     }
     generateWhereabouts() {
         const hidingPlaces = [
@@ -53,7 +47,7 @@ class Bounty {
             `They have taken on another identity or are living in disguise`,
             `They aren't fleeing; they intend to kill their pursuers`
         ];
-        return random_js_1.default(hidingPlaces);
+        return chooseRandomlyFrom(hidingPlaces);
     }
     generateUnique() {
         const uniqueTraits = [
@@ -66,8 +60,8 @@ class Bounty {
             "They are a member of a rival government or community. Killing or capturing them may have far-reaching consequences.",
             "They have either a magical or technological item or some other form of enhancement that gives them an unexpected advantage.",
         ];
-        return random_js_1.default(uniqueTraits);
+        return chooseRandomlyFrom(uniqueTraits);
     }
 }
-exports.Bounty = Bounty;
-exports.default = Bounty;
+export default Bounty;
+//# sourceMappingURL=Bounty.js.map
