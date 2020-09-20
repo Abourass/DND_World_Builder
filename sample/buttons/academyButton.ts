@@ -1,12 +1,14 @@
 import Academy from '../../src/buildings/Academy.js';
+import checkDepth from '../tools/checkDepth.js';
 import create from '../tools/create.js';
 import nest from '../tools/nest.js';
 
 export const academyButton = () => {
   create('button', '#academyHook').addClass(['button', 'is-primary']).text('Generate Academy').on('click', ()=> {
     const academy = new Academy('Example Academy');
+    let target = checkDepth('#generateOutput-1')
 
-    nest('div', '#generateOutput', (mainTile => {
+    nest('div', target, (mainTile => {
       nest('article', mainTile, (article => {
         create('p', article).addClass('title').text(academy.name);
         create('p', article).addClass('subtitle').text(academy.type);

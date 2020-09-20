@@ -1,12 +1,15 @@
 import Prison from '../../src/buildings/Prison.js';
+import checkDepth from '../tools/checkDepth.js';
 import create from '../tools/create.js';
 import nest from '../tools/nest.js';
+
 
 export const prisonButton = () => {
   create('button', '#prisonHook').addClass(['button', 'is-warning']).text('Generate Prison').on('click', ()=> {
     const prison = new Prison('Example Prison');
+    let target = checkDepth('#generateOutput-1')
 
-    nest('div', '#generateOutput', (mainTile => {
+    nest('div', target, (mainTile => {
       nest('article', mainTile, (article => {
         create('p', article).addClass('title').text('Example Prison');
         create('p', article).addClass('subtitle').text(prison.type);
