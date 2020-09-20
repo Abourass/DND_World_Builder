@@ -2,9 +2,29 @@ import Festivus from '../../src/world/Festivus.js';
 import checkDepth from '../tools/checkDepth.js';
 import create from '../tools/create.js';
 import nest from '../tools/nest.js';
+import Style from '../tools/style.js';
 
-export const festivusButton = () => {
-  create('button', '#festivusHook').addClass(['button', 'is-link']).text('Generate Festival / Religion').on('click', ()=> {
+export const festivusButton = (theme: Style) => {
+  theme.add(`
+    .button.is-purple {
+    border-color: transparent;
+    color: #fff;
+    background-color: #673ab7
+  }
+  
+  .button.is-purple:hover {
+    border-color: transparent;
+    color: #fff;
+    background-color: #7b4fca
+  }
+  
+  .notification.is-purple {
+    color: #fff;
+    background-color: #673ab7
+  }
+  `)
+
+  create('button', '#festivusHook').addClass(['button', 'is-purple']).text('Generate Festival / Holiday').on('click', ()=> {
     const festival = new Festivus((Math.floor(Math.random() * 11) > 5) ? 'Festivus' : 'Christmas Two');
     let target = checkDepth('#generateOutput-1')
 
@@ -28,7 +48,7 @@ export const festivusButton = () => {
             })
           }).set({style: 'display: flex; flex-direction: column;'}).addClass(['column'])
         }).addClass(['content', 'columns'])
-      })).addClass(['tile', 'is-child', 'notification', 'is-link'])
+      })).addClass(['tile', 'is-child', 'notification', 'is-purple'])
     })).addClass(['tile', 'is-parent'])
   })
 }
