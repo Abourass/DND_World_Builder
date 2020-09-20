@@ -4,6 +4,6 @@ import Style from './tools/style.js';
 
 const theme = new Style('');
 
-create('button', 'body').text('Click me').on('click', ()=> {
-  console.log(new Prison('Silvie'))
+create('button', '#buttons').addClass('button').text('Generate Prison').on('click', ()=> {
+  console.log(new Prison('Example Prison'))
 })
