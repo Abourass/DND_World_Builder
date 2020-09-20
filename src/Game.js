@@ -1,4 +1,4 @@
-import HauntedHouse from './quest/HauntedHouse.js';
+import HauntedHouse from './buildings/HauntedHouse.js';
 import Academy from './buildings/Academy.js';
 import Contest from './quest/Contest.js';
 import Bounty from './quest/Bounty.js';
@@ -25,7 +25,7 @@ console.log(new Heist());
 console.log(new Heist());
 console.log(new Heist());
 console.log('=========> HAUNTED HOUSES <=========');
-console.log(new HauntedHouse());
-console.log(new HauntedHouse());
-console.log(new HauntedHouse());
+console.log(new HauntedHouse('Simple House'));
+console.log(new HauntedHouse('Oliander house'));
+console.log(new HauntedHouse('Oram Manor'));
 //# sourceMappingURL=Game.js.map

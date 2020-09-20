@@ -1,12 +1,14 @@
 import chooseRandomlyFrom from '../lib/random.js';
 
 export class HauntedHouse {
+  public name: string;
   public location: string;
   public causedBy: string;
   public ghostDemeanor: string;
   public ghostDesire: string;
 
-  constructor(location = null, causedBy = null, ghostDemeanor = null, ghostDesire = null) {
+  constructor(name: string, location = null, causedBy = null, ghostDemeanor = null, ghostDesire = null) {
+    this.name = name;
     this.location = (location === null) ? this.generateLocation() : location;
     this.causedBy = (causedBy === null) ? this.generateCause() : causedBy;
     this.ghostDemeanor = (ghostDemeanor === null) ? this.generateGhostDemeanor() : ghostDemeanor;
