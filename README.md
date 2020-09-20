@@ -8,11 +8,9 @@
 
 > Generate some flavor for your world
 
-## Install
+## Try some Prompts
 
-```sh
-npm install
-```
+[Examples](https://abourass.github.io/DND_World_Builder/web/index.html)
 
 ## Run tests
 
