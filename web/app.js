@@ -6,7 +6,12 @@ import contestButton from './buttons/contestButton.js';
 import heistButton from './buttons/heistButton.js';
 import festivusButton from './buttons/festivusButton.js';
 import Style from './tools/style.js';
-const theme = new Style();
+const theme = new Style(`
+.justify-center {
+  display: flex;
+  justify-content: center;
+}
+`);
 prisonButton();
 academyButton();
 hauntedHouseButton();
