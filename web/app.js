@@ -7,6 +7,7 @@ import heistButton from './buttons/heistButton.js';
 import festivusButton from './buttons/festivusButton.js';
 import Style from './tools/style.js';
 import weaponButton from './buttons/weaponButton.js';
+import disasterButton from './buttons/disasterButton.js';
 const theme = new Style(`
 .justify-center {
   display: flex;
@@ -21,4 +22,5 @@ contestButton();
 heistButton();
 festivusButton(theme);
 weaponButton(theme);
+disasterButton();
 //# sourceMappingURL=app.js.map
