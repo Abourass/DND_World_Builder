@@ -5,7 +5,7 @@ import nest from '../tools/nest.js';
 
 export const hauntedHouseButton = () => {
   create('button', '#hauntedHook').addClass(['button', 'is-dark']).text('Generate Haunted House').on('click', ()=> {
-    const hauntedHouse = new HauntedHouse('Example House');
+    const hauntedHouse = new HauntedHouse('Haunted House');
     let target = checkDepth('#generateOutput-1')
 
     nest('div', target, (mainTile => {

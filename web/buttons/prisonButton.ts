@@ -6,12 +6,12 @@ import nest from '../tools/nest.js';
 
 export const prisonButton = () => {
   create('button', '#prisonHook').addClass(['button', 'is-warning']).text('Generate Prison').on('click', ()=> {
-    const prison = new Prison('Example Prison');
+    const prison = new Prison('Prison');
     let target = checkDepth('#generateOutput-1')
 
     nest('div', target, (mainTile => {
       nest('article', mainTile, (article => {
-        create('p', article).addClass('title').text('Example Prison');
+        create('p', article).addClass('title').text(prison.name);
         create('p', article).addClass('subtitle').text(prison.type);
         nest('div', article, (content) => {
           nest('div', content, (titles) => {

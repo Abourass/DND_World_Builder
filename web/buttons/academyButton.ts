@@ -5,7 +5,7 @@ import nest from '../tools/nest.js';
 
 export const academyButton = () => {
   create('button', '#academyHook').addClass(['button', 'is-primary']).text('Generate Academy').on('click', ()=> {
-    const academy = new Academy('Example Academy');
+    const academy = new Academy('Academy');
     let target = checkDepth('#generateOutput-1')
 
     nest('div', target, (mainTile => {
